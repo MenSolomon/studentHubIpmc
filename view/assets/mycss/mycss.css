@@ -1,0 +1,101 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  transition: 1s easy;
+}
+
+main,
+body {
+  background-color: red;
+  color: white;
+  font-size: 20px;
+  font-family: georgia, garamond, serif;
+  perspective: 1000px;
+}
+
+a {
+  color: white;
+  background-color: black;
+  text-decoration: none;
+  display: block;
+  padding-right: 2px;
+  margin-right: 5px;
+  margin-top: 5px;
+  height: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+a:hover {
+  background-color: lime;
+  color: black;
+}
+
+.flip-box {
+  width: 100%;
+  position: relative;
+  left: calc(50% - 300px);
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  position: absolute;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+}
+
+.hide {
+  display: none;
+}
+
+.flip-box-back {
+  border: 1px solid lime;
+  position: absolute;
+  transform: rotateY(180deg);
+  left: calc(40% - 70px);
+  top: calc(15% + 50px);
+  width: 80%;
+  height: 150px;
+}
+
+.flip-box-front,
+.flip-box-back {
+  -webkit-backface-visibility: hidden;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+#chk1:checked ~ .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+h4 {
+  width: 100%;
+  text-align: center;
+  line-height: 30px;
+  font-size: 25px;
+  background-color: black;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.dashboard-container {
+  width: 80vw;
+  height: 100vh;
+  background-color: green;
+  display: grid;
+  grid-template-columns: 0.3fr 0.7fr;
+  grid-template-areas: "nav content";
+}
+
+.dashboard-nav {
+  grid-area: nav;
+  background-color: rgba(128, 128, 128, 0.199);
+}
+
+.dashboard-content {
+  grid-area: content;
+}
